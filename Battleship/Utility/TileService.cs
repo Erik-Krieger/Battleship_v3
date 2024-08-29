@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
-using Properties;
+using Battleship.Properties;
 
 namespace Battleship.Utility;
 
@@ -23,7 +23,7 @@ public static class TileService
         }
         if ( m_WaterTile == null )
         {
-            m_WaterTile = Resources.water_sprite;
+            m_WaterTile = Resources.Water_Sprite;
         }
         Image image = null;
         switch ( theType )
@@ -32,10 +32,10 @@ public static class TileService
                 image = m_WaterTile;
                 break;
             case TileType.Hit:
-                image = mergeImages( m_WaterTile, Resources.hit_sprite );
+                image = mergeImages( m_WaterTile, Resources.Hit_Sprite );
                 break;
             case TileType.Miss:
-                image = mergeImages( m_WaterTile, Resources.Miss );
+                image = mergeImages( m_WaterTile, Resources.Miss_Sprite );
                 break;
             case TileType.PatrolBoat_1:
                 image = mergeImages( m_WaterTile, Resources.PatrolBoat_1, theOrientation );
