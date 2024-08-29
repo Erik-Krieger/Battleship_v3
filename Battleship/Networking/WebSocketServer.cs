@@ -30,8 +30,11 @@ public class WebSocketServer : NetworkPeer
         m_Listener = new TcpListener( IPAddress.Any, 80 );
         m_Listener.AllowNatTraversal( allowed: true );
         m_Listener.Start();
+
         m_TcpClient = await m_Listener.AcceptTcpClientAsync();
+
         NetworkStream stream = m_TcpClient.GetStream();
+
         while ( !m_Token.IsCancellationRequested )
         {
             while ( !stream.DataAvailable )
@@ -65,24 +68,25 @@ public class WebSocketServer : NetworkPeer
             switch ( num2 )
             {
                 case 126uL:
-                    num2 = BitConverter.ToUInt16( new byte[2]
-                    {
-                    array[3],
-                    array[2]
-                    }, 0 );
+                    num2 = BitConverter.ToUInt16(
+                        new byte[2]
+                        {
+                            array[3],
+                            array[2]
+                        }, 0 );
                     num = 4;
                     break;
                 case 127uL:
                     num2 = BitConverter.ToUInt64( new byte[8]
                     {
-                    array[9],
-                    array[8],
-                    array[7],
-                    array[6],
-                    array[5],
-                    array[4],
-                    array[3],
-                    array[2]
+                        array[9],
+                        array[8],
+                        array[7],
+                        array[6],
+                        array[5],
+                        array[4],
+                        array[3],
+                        array[2]
                     }, 0 );
                     num = 10;
                     break;
@@ -120,36 +124,55 @@ public class WebSocketServer : NetworkPeer
 
     public override void SendMessage( string theMessage )
     {
-        if ( m_TcpClient.GetStream() != null && !string.IsNullOrEmpty( theMessage ) )
+        if ( m_TcpClient.GetStream() is not null && !string.IsNullOrEmpty( theMessage ) )
         {
-            byte[] array = EncodeString( theMessage );
-            byte[] array2 = array.Length < 126 ? new byte[2]
+            Span<byte> msg = EncodeString( theMessage );
+            Span<byte> msgLengthBuffer = stackalloc byte[10];
+
+            int bufferLength = 0;
+
+            if ( msg.Length < 126 )
             {
-                129,
-                (byte)array.Length
-            } : array.Length > 65536 ? new byte[10]
+                msgLengthBuffer[0] = 129;
+                msgLengthBuffer[1] = (byte)( msg.Length );
+
+                bufferLength = 2;
+            }
+            else if ( msg.Length > 65536 )
             {
-                129,
-                127,
-                (byte)(array.Length >> 24),
-                (byte)(array.Length >> 16),
-                (byte)(array.Length >> 8),
-                (byte)array.Length,
-                (byte)(array.Length >> 24),
-                (byte)(array.Length >> 16),
-                (byte)(array.Length >> 8),
-                (byte)array.Length
-            } : new byte[4]
+                msgLengthBuffer[0] = 129;
+                msgLengthBuffer[1] = 127;
+
+                /*msgLengthBuffer[2] = (byte)( msg.Length >> 56 );
+                msgLengthBuffer[3] = (byte)( msg.Length >> 48 );
+                msgLengthBuffer[4] = (byte)( msg.Length >> 40 );
+                msgLengthBuffer[5] = (byte)( msg.Length >> 32 );*/
+
+                msgLengthBuffer[6] = (byte)( msg.Length >> 24 );
+                msgLengthBuffer[7] = (byte)( msg.Length >> 16 );
+                msgLengthBuffer[8] = (byte)( msg.Length >> 8 );
+                msgLengthBuffer[9] = (byte)( msg.Length );
+
+                bufferLength = 10;
+            }
+            else
             {
-                129,
-                126,
-                (byte)(array.Length >> 8),
-                (byte)array.Length
-            };
-            byte[] array3 = new byte[array.Length + array2.Length];
-            array2.CopyTo( array3, 0 );
-            array.CopyTo( array3, array2.Length );
-            m_TcpClient.GetStream().Write( array3, 0, array3.Length );
+                msgLengthBuffer[0] = 129;
+                msgLengthBuffer[1] = 126;
+
+                msgLengthBuffer[2] = (byte)( msg.Length >> 8 );
+                msgLengthBuffer[3] = (byte)( msg.Length );
+
+                bufferLength = 4;
+            }
+
+            Span<byte> finalMessageBuffer = stackalloc byte[msg.Length + bufferLength];
+            Span<byte> bufferSlice = finalMessageBuffer.Slice(bufferLength, finalMessageBuffer.Length - bufferLength);
+
+            msgLengthBuffer.CopyTo( finalMessageBuffer );
+            msg.CopyTo( bufferSlice );
+
+            m_TcpClient.GetStream().Write( finalMessageBuffer );
         }
     }
 
