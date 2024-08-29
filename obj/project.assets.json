@@ -9,26 +9,23 @@
     ".NETFramework,Version=v4.8": []
   },
   "packageFolders": {
-    "C:\\Users\\erikk\\.nuget\\packages\\": {},
-    "C:\\Users\\erikk\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder": {},
+    "C:\\Users\\erik.krieger\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\erikk\\Programming\\Battleship\\Battleship.csproj",
+      "projectUniqueName": "C:\\workspace-git\\Battleship_v3\\Battleship.csproj",
       "projectName": "Battleship_v2",
-      "projectPath": "C:\\Users\\erikk\\Programming\\Battleship\\Battleship.csproj",
-      "packagesPath": "C:\\Users\\erikk\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\erikk\\Programming\\Battleship\\obj\\",
+      "projectPath": "C:\\workspace-git\\Battleship_v3\\Battleship.csproj",
+      "packagesPath": "C:\\Users\\erik.krieger\\.nuget\\packages\\",
+      "outputPath": "C:\\workspace-git\\Battleship_v3\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Users\\erikk\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder",
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\erikk\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Users\\erikk\\AppData\\Roaming\\NuGet\\config\\Godot.Offline.Config",
+        "C:\\Users\\erik.krieger\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -38,7 +35,8 @@
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "C:\\Program Files\\dotnet\\library-packs": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "https://artifacts.lpkf.com/artifactory/api/nuget/v3/Core_Framework-NuGet": {},
+        "https://artifacts.lpkf.com/artifactory/api/nuget/v3/Core_Framework_ThirdParty-NuGet": {}
       },
       "frameworks": {
         "net48": {
@@ -50,17 +48,12 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {
       "net48": {
         "targetAlias": "net48",
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.317\\RuntimeIdentifierGraph.json"
       }
     },
     "runtimes": {
