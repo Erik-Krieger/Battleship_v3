@@ -1,0 +1,77 @@
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+  <PropertyGroup>
+    <AssemblyName>Battleship_v2</AssemblyName>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <OutputType>WinExe</OutputType>
+    <UseWPF>True</UseWPF>
+    <TargetFramework>net48</TargetFramework>
+    <Prefer32Bit>True</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <LangVersion>11.0</LangVersion>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>app.ico</ApplicationIcon>
+    <RootNamespace />
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="resources\sprites\sea-20warfare-20set\submarine\weaponsubmarinestandard.png" />
+    <None Remove="resources\sprites\sea-20warfare-20set\submarine\shipsubmarinehull.png" />
+    <None Remove="resources\sprites\sea-20warfare-20set\rescue-20ship\shiprescue.png" />
+    <None Remove="resources\dev_art\light_gray.png" />
+    <None Remove="resources\sprites\sea-20warfare-20set\plane\missile.png" />
+    <None Remove="resources\dev_art\gray.png" />
+    <None Remove="resources\sprites\sea-20warfare-20set\destroyer\weapondestroyerstandardgun.png" />
+    <None Remove="resources\sprites\sea-20warfare-20set\cruiser\shipcruiserhull.png" />
+    <None Remove="resources\sprites\sea-20warfare-20set\cruiser\weaponcruiserstandardstsm.png" />
+    <None Remove="resources\sprites\sea-20warfare-20set\plane\planef-35lightning2.png" />
+    <None Remove="resources\sprites\sea-20warfare-20set\battleship\shipbattleshiphull.png" />
+    <None Remove="resources\sprites\quick-20cargo.png" />
+    <None Remove="resources\dev_art\gray_b.png" />
+    <None Remove="resources\dev_art\gray_c.png" />
+    <None Remove="resources\dev_art\gray_d.png" />
+    <None Remove="resources\dev_art\gray_p.png" />
+    <None Remove="resources\dev_art\gray_s.png" />
+    <None Remove="resources\sprites\sea-20warfare-20set\battleship\weaponbattleshipstandardgun.png" />
+    <None Remove="resources\sprites\sea-20warfare-20set\patrolboat\shippatrolhull.png" />
+    <None Remove="resources\sprites\sea-20warfare-20set\carrier\shipcarrierhull.png" />
+    <None Remove="resources\dev_art\red.png" />
+    <None Remove="resources\sprites\sea-20warfare-20set\display.png" />
+    <None Remove="resources\dev_art\blue.png" />
+    <None Remove="resources\sprites\sea-20warfare-20set\destroyer\shipdestroyerhull.png" />
+    <None Remove="schiff.ico" />
+    <EmbeddedResource Include="resources\sprites\sea-20warfare-20set\submarine\weaponsubmarinestandard.png" LogicalName="resources/sprites/sea%20warfare%20set/submarine/weaponsubmarinestandard.png" />
+    <EmbeddedResource Include="resources\sprites\sea-20warfare-20set\submarine\shipsubmarinehull.png" LogicalName="resources/sprites/sea%20warfare%20set/submarine/shipsubmarinehull.png" />
+    <EmbeddedResource Include="resources\sprites\sea-20warfare-20set\rescue-20ship\shiprescue.png" LogicalName="resources/sprites/sea%20warfare%20set/rescue%20ship/shiprescue.png" />
+    <EmbeddedResource Include="resources\dev_art\light_gray.png" LogicalName="resources/dev_art/light_gray.png" />
+    <EmbeddedResource Include="resources\sprites\sea-20warfare-20set\plane\missile.png" LogicalName="resources/sprites/sea%20warfare%20set/plane/missile.png" />
+    <EmbeddedResource Include="resources\dev_art\gray.png" LogicalName="resources/dev_art/gray.png" />
+    <EmbeddedResource Include="resources\sprites\sea-20warfare-20set\destroyer\weapondestroyerstandardgun.png" LogicalName="resources/sprites/sea%20warfare%20set/destroyer/weapondestroyerstandardgun.png" />
+    <EmbeddedResource Include="resources\sprites\sea-20warfare-20set\cruiser\shipcruiserhull.png" LogicalName="resources/sprites/sea%20warfare%20set/cruiser/shipcruiserhull.png" />
+    <EmbeddedResource Include="resources\sprites\sea-20warfare-20set\cruiser\weaponcruiserstandardstsm.png" LogicalName="resources/sprites/sea%20warfare%20set/cruiser/weaponcruiserstandardstsm.png" />
+    <EmbeddedResource Include="resources\sprites\sea-20warfare-20set\plane\planef-35lightning2.png" LogicalName="resources/sprites/sea%20warfare%20set/plane/planef-35lightning2.png" />
+    <EmbeddedResource Include="resources\sprites\sea-20warfare-20set\battleship\shipbattleshiphull.png" LogicalName="resources/sprites/sea%20warfare%20set/battleship/shipbattleshiphull.png" />
+    <EmbeddedResource Include="resources\sprites\quick-20cargo.png" LogicalName="resources/sprites/quick%20cargo.png" />
+    <EmbeddedResource Include="resources\dev_art\gray_b.png" LogicalName="resources/dev_art/gray_b.png" />
+    <EmbeddedResource Include="resources\dev_art\gray_c.png" LogicalName="resources/dev_art/gray_c.png" />
+    <EmbeddedResource Include="resources\dev_art\gray_d.png" LogicalName="resources/dev_art/gray_d.png" />
+    <EmbeddedResource Include="resources\dev_art\gray_p.png" LogicalName="resources/dev_art/gray_p.png" />
+    <EmbeddedResource Include="resources\dev_art\gray_s.png" LogicalName="resources/dev_art/gray_s.png" />
+    <EmbeddedResource Include="resources\sprites\sea-20warfare-20set\battleship\weaponbattleshipstandardgun.png" LogicalName="resources/sprites/sea%20warfare%20set/battleship/weaponbattleshipstandardgun.png" />
+    <EmbeddedResource Include="resources\sprites\sea-20warfare-20set\patrolboat\shippatrolhull.png" LogicalName="resources/sprites/sea%20warfare%20set/patrolboat/shippatrolhull.png" />
+    <EmbeddedResource Include="resources\sprites\sea-20warfare-20set\carrier\shipcarrierhull.png" LogicalName="resources/sprites/sea%20warfare%20set/carrier/shipcarrierhull.png" />
+    <EmbeddedResource Include="resources\dev_art\red.png" LogicalName="resources/dev_art/red.png" />
+    <EmbeddedResource Include="resources\sprites\sea-20warfare-20set\display.png" LogicalName="resources/sprites/sea%20warfare%20set/display.png" />
+    <EmbeddedResource Include="resources\dev_art\blue.png" LogicalName="resources/dev_art/blue.png" />
+    <EmbeddedResource Include="resources\sprites\sea-20warfare-20set\destroyer\shipdestroyerhull.png" LogicalName="resources/sprites/sea%20warfare%20set/destroyer/shipdestroyerhull.png" />
+    <EmbeddedResource Include="schiff.ico" LogicalName="schiff.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UserControl x:Class="Battleship_v2.Views.NavigationView" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:local="clr-namespace:Battleship_v2.Views" xmlns:viewmodels="clr-namespace:Battleship_v2.ViewModels">
+  <FrameworkElement.Resources>
+    <ResourceDictionary>
+      <DataTemplate x:Key="{DataTemplateKey {x:Type viewmodels:MainMenuViewModel}}" DataType="{x:Type viewmodels:MainMenuViewModel}">
+        <local:MainMenuView />
+      </DataTemplate>
+      <DataTemplate x:Key="{DataTemplateKey {x:Type viewmodels:GameViewModel}}" DataType="{x:Type viewmodels:GameViewModel}">
+        <local:GameView />
+      </DataTemplate>
+      <DataTemplate x:Key="{DataTemplateKey {x:Type viewmodels:SingleplayerSetupViewModel}}" DataType="{x:Type viewmodels:SingleplayerSetupViewModel}">
+        <local:SingleplayerSetupView />
+      </DataTemplate>
+      <DataTemplate x:Key="{DataTemplateKey {x:Type viewmodels:MultiplayerSetupViewModel}}" DataType="{x:Type viewmodels:MultiplayerSetupViewModel}">
+        <local:MultiplayerSetupView />
+      </DataTemplate>
+      <DataTemplate x:Key="{DataTemplateKey {x:Type viewmodels:GameOverViewModel}}" DataType="{x:Type viewmodels:GameOverViewModel}">
+        <local:GameOverView />
+      </DataTemplate>
+      <DataTemplate x:Key="{DataTemplateKey {x:Type viewmodels:HostMenuViewModel}}" DataType="{x:Type viewmodels:HostMenuViewModel}">
+        <local:HostMenuView />
+      </DataTemplate>
+      <DataTemplate x:Key="{DataTemplateKey {x:Type viewmodels:JoinMenuViewModel}}" DataType="{x:Type viewmodels:JoinMenuViewModel}">
+        <local:JoinMenuView />
+      </DataTemplate>
+    </ResourceDictionary>
+  </FrameworkElement.Resources>
+  <Grid>
+    <local:AudioControlView Panel.ZIndex="1" HorizontalAlignment="Right" VerticalAlignment="Top" />
+    <DockPanel LastChildFill="True">
+      <ContentControl Name="Pages" DockPanel.Dock="Right" Content="{Binding SelectedViewModel}" />
+    </DockPanel>
+  </Grid>
+</UserControl>
