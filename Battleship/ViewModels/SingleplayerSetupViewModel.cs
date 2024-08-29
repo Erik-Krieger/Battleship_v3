@@ -1,7 +1,7 @@
 using System.Windows.Input;
-using Enemies;
-using Services;
-using Utility;
+using Battleship.Enemies;
+using Battleship.Services;
+using Battleship.Utility;
 
 namespace Battleship.ViewModels;
 

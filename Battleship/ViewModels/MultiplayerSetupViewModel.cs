@@ -1,6 +1,6 @@
 using System.Windows.Input;
-using Services;
-using Utility;
+using Battleship.Services;
+using Battleship.Utility;
 
 namespace Battleship.ViewModels;
 

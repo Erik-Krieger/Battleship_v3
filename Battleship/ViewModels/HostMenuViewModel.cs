@@ -1,10 +1,10 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
-using Enemies;
-using Services;
-using Ships;
-using Utility;
+using Battleship.Enemies;
+using Battleship.Services;
+using Battleship.Ships;
+using Battleship.Utility;
 
 namespace Battleship.ViewModels;
 

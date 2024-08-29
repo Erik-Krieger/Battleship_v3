@@ -1,4 +1,4 @@
-using Services;
+using Battleship.Services;
 
 namespace Battleship.ViewModels;
 

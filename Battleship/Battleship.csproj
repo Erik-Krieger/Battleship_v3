@@ -11,7 +11,7 @@
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>app.ico</ApplicationIcon>
+    <ApplicationIcon>schiff.ico</ApplicationIcon>
     <RootNamespace />
     <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
@@ -40,7 +40,7 @@
     <None Remove="resources\sprites\sea-20warfare-20set\display.png" />
     <None Remove="resources\dev_art\blue.png" />
     <None Remove="resources\sprites\sea-20warfare-20set\destroyer\shipdestroyerhull.png" />
-    <None Remove="schiff.ico" />
+    <None Remove="ship.ico" />
     <EmbeddedResource Include="resources\sprites\sea-20warfare-20set\submarine\weaponsubmarinestandard.png" LogicalName="resources/sprites/sea%20warfare%20set/submarine/weaponsubmarinestandard.png" />
     <EmbeddedResource Include="resources\sprites\sea-20warfare-20set\submarine\shipsubmarinehull.png" LogicalName="resources/sprites/sea%20warfare%20set/submarine/shipsubmarinehull.png" />
     <EmbeddedResource Include="resources\sprites\sea-20warfare-20set\rescue-20ship\shiprescue.png" LogicalName="resources/sprites/sea%20warfare%20set/rescue%20ship/shiprescue.png" />
@@ -65,7 +65,9 @@
     <EmbeddedResource Include="resources\sprites\sea-20warfare-20set\display.png" LogicalName="resources/sprites/sea%20warfare%20set/display.png" />
     <EmbeddedResource Include="resources\dev_art\blue.png" LogicalName="resources/dev_art/blue.png" />
     <EmbeddedResource Include="resources\sprites\sea-20warfare-20set\destroyer\shipdestroyerhull.png" LogicalName="resources/sprites/sea%20warfare%20set/destroyer/shipdestroyerhull.png" />
-    <EmbeddedResource Include="schiff.ico" LogicalName="schiff.ico" />
+    <Content Include="ship.ico" LogicalName="schiff.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="WindowsBase" />

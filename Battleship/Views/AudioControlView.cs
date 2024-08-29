@@ -1,6 +1,6 @@
 using System.Windows.Controls;
 using System.Windows.Markup;
-using ViewModels;
+using Battleship.ViewModels;
 
 namespace Battleship.Views;
 

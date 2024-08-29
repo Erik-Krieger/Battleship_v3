@@ -1,6 +1,6 @@
 using System.Collections.Generic;
-using Models;
-using Services;
+using Battleship.Models;
+using Battleship.Services;
 
 namespace Battleship.ViewModels;
 

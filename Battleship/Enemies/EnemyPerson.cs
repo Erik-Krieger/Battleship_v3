@@ -1,8 +1,8 @@
 using System;
 using System.Windows;
+using Battleship.Services;
 using Battleship.Utility;
 using Networking;
-using Services;
 
 namespace Battleship.Enemies;
 

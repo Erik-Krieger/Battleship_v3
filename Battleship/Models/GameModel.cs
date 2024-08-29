@@ -1,5 +1,5 @@
+using Battleship.Services;
 using Battleship.ViewModels;
-using Services;
 
 namespace Battleship.Models;
 

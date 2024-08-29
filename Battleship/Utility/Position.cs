@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using System.Windows.Controls;
-using Ships;
+using Battleship.Ships;
 
 namespace Battleship.Utility;
 
