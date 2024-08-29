@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETFRAMEWORK;NET48;
 
-14-582162697
+14518494237
 
-66338202212
+66-1335256058
 20-4499186
-MainWindow.xaml;Views\AudioControlView.xaml;Views\GameOverView.xaml;Views\GameView.xaml;Views\HostMenuView.xaml;Views\JoinMenuView.xaml;Views\LoserView.xaml;Views\MainMenuView.xaml;Views\MultiplayerSetupView.xaml;Views\NavigationView.xaml;Views\PlayingFieldView.xaml;Views\SingleplayerSetupView.xaml;Views\TargetFieldView.xaml;Views\WinnerView.xaml;
+Battleship_v3\MainWindow.xaml;Battleship_v3\Views\AudioControlView.xaml;Battleship_v3\Views\GameOverView.xaml;Battleship_v3\Views\GameView.xaml;Battleship_v3\Views\HostMenuView.xaml;Battleship_v3\Views\JoinMenuView.xaml;Battleship_v3\Views\LoserView.xaml;Battleship_v3\Views\MainMenuView.xaml;Battleship_v3\Views\MultiplayerSetupView.xaml;Battleship_v3\Views\NavigationView.xaml;Battleship_v3\Views\PlayingFieldView.xaml;Battleship_v3\Views\SingleplayerSetupView.xaml;Battleship_v3\Views\TargetFieldView.xaml;Battleship_v3\Views\WinnerView.xaml;
 
 False
 
