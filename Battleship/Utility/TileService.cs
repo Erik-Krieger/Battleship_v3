@@ -10,7 +10,7 @@ public static class TileService
 {
     private static List<Tile> m_TileCache = new List<Tile>( 20 );
 
-    private static Image m_WaterTile;
+    private static byte[] m_WaterTile;
 
     public static byte[] GetTile( TileType theType, TileOrientation theOrientation = TileOrientation.Up )
     {
@@ -21,15 +21,18 @@ public static class TileService
                 return item.Data;
             }
         }
+
         if ( m_WaterTile == null )
         {
             m_WaterTile = Resources.Water_Sprite;
         }
-        Image image = null;
+
+        Image image;
+
         switch ( theType )
         {
             case TileType.Water:
-                image = m_WaterTile;
+                image = ImageFromByteArray( Resources.Water_Sprite );
                 break;
             case TileType.Hit:
                 image = mergeImages( m_WaterTile, Resources.Hit_Sprite );
@@ -88,22 +91,30 @@ public static class TileService
             case TileType.Destroyer_3:
                 image = mergeImages( m_WaterTile, Resources.Destroyer_3, theOrientation );
                 break;
+            default:
+                image = null;
+                break;
         }
+
         MemoryStream memoryStream = new MemoryStream();
         image.Save( memoryStream, ImageFormat.Png );
         byte[] array = memoryStream.ToArray();
+
         m_TileCache.Add( new Tile
         {
             Type = theType,
             Orientation = theOrientation,
             Data = array
         } );
+
         return array;
     }
 
-    private static Image mergeImages( Image theBackground, Image theForeground, TileOrientation theOrientation = TileOrientation.Up )
+    private static Image mergeImages( byte[] theBackgroundBytes, byte[] theForegroundBytes, TileOrientation theOrientation = TileOrientation.Up )
     {
-        Image image = (Image)theBackground.Clone();
+        Image image = ImageFromByteArray( theBackgroundBytes );
+        Image theForeground = ImageFromByteArray( theForegroundBytes );
+        
         Graphics graphics = Graphics.FromImage( image );
         switch ( theOrientation )
         {
@@ -124,5 +135,12 @@ public static class TileService
         graphics.DrawImage( theForeground, 0, 0, 32, 32 );
         graphics.Dispose();
         return image;
+    }
+
+    public static Image ImageFromByteArray( byte[] imageBuffer )
+    {
+        Stream aStream = new MemoryStream( imageBuffer );
+
+        return Image.FromStream( aStream );
     }
 }
